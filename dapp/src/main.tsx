@@ -16,5 +16,5 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <WithWalletConnector network={testnet}>
       {(props) => <App {...props} />}
     </WithWalletConnector>
-  </React.StrictMode>
+  </React.StrictMode>,
 )

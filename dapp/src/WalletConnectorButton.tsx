@@ -2,19 +2,21 @@ import { ConnectorType, useWalletConnectorSelector, WalletConnection, WalletConn
 
 interface Props extends WalletConnectionProps {
     connection: WalletConnection | undefined
-    connectorType: ConnectorType;
-    connectorName: string;
+    connectorType: ConnectorType
+    connectorName: string
 }
 
-function WalletConnectorButton(props:Props) {
-  const { connection, connectorType, connectorName } = props;
-  const { isSelected, isConnected, isDisabled, select } = useWalletConnectorSelector(connectorType, connection, props);
+export function WalletConnectorButton(props: Props) {
+    const { connection, connectorType, connectorName } = props
+    const { isSelected, isConnected, isDisabled, select } = useWalletConnectorSelector(connectorType, connection, props)
 
-  return (
-    <button onClick={select}> 
-      Connect
-    </button>
-  )
+    if(isConnected) return(
+        <button onClick={select}>Disconnect</button>
+    )
+
+    return(
+        <button onClick={select}>Connect</button> 
+    )
+
+    // return (<></>)
 }
-
-export default WalletConnectorButton
