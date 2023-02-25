@@ -44,6 +44,6 @@ JSON parameter (jsons/update.json):
 }
 ```
 
-## View function
+## Contract invoke
 
 ![screenshots/view.png](screenshots/view.png)
